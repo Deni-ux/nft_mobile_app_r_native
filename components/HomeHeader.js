@@ -2,7 +2,7 @@
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
-const HomeHeader = (onSearch) => {
+const HomeHeader = ({ onSearch }) => {
   return (
     <View
       style={{
@@ -66,20 +66,22 @@ const HomeHeader = (onSearch) => {
         </Text>
       </View>
 
-      <View style={{marginTop:SIZES.font}}>
-        <View style={{
-          width: '100%',
-          borderRadius: SIZES.font,
-          backgroundColor: COLORS.gray,
-          flexDirection: 'row',
-          alignItems: 'center',
-          paddingHorizontal: SIZES.font,
-          paddingVertical:SIZES.small -2
-        }}>
+      <View style={{ marginTop: SIZES.font }}>
+        <View
+          style={{
+            width: "100%",
+            borderRadius: SIZES.font,
+            backgroundColor: COLORS.gray,
+            flexDirection: "row",
+            alignItems: "center",
+            paddingHorizontal: SIZES.font,
+            paddingVertical: SIZES.small - 2,
+          }}
+        >
           <Image
             source={assets.search}
-            resizeMode='contain'
-            style={{width:20, height:20, marginRight:SIZES.base}}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, marginRight: SIZES.base }}
           />
           <TextInput
             placeholder="Search NFTs"
