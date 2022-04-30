@@ -1,10 +1,20 @@
 ﻿import { View, Text, Image } from "react-native";
 import { SIZES, COLORS, FONTS, SHADOWS, assets } from "../constants";
 
-export const NFTTitle = () => {
+export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
   return (
     <View>
-      <Text>NFTTitle</Text>
+          <Text style={{
+              fontFamily: FONTS.semiBold, 
+              fontSize: titleSize,
+              color:COLORS.primary
+          }}>{title}</Text>
+
+          <Text style={{
+              fontFamily: FONTS.regular, 
+              fontSize: subTitleSize,
+              color:COLORS.primary
+          }}>{subTitle}</Text>
     </View>
   );
 };
@@ -45,31 +55,37 @@ export const People = () => {
 };
 export const EndDate = () => {
   return (
-      <View style={{
-          paddingHorizontal: SIZES.font,
-          paddingVertical: SIZES.base,
-          backgroundColor: COLORS.white,
-          justifyContent: 'center',
-          alignItems: 'center',
-          ...SHADOWS.light,
-          elevation: 1,
-          maxWidth:'50%'
-    }}>
-          <Text
-              style={{
-                  fontFamily: FONTS.regular,
-                  fontSize: SIZES.small,
-                  colors: COLORS.primary
-              }}>Ending in
-          </Text>
-          
-          <Text
-              style={{
-                  fontFamily: FONTS.semiBold,
-                  fontSize: SIZES.medium,
-                  colors: COLORS.primary
-              }}>12h 30m
-          </Text>
+    <View
+      style={{
+        paddingHorizontal: SIZES.font,
+        paddingVertical: SIZES.base,
+        backgroundColor: COLORS.white,
+        justifyContent: "center",
+        alignItems: "center",
+        ...SHADOWS.light,
+        elevation: 1,
+        maxWidth: "50%",
+      }}
+    >
+      <Text
+        style={{
+          fontFamily: FONTS.regular,
+          fontSize: SIZES.small,
+          colors: COLORS.primary,
+        }}
+      >
+        Ending in
+      </Text>
+
+      <Text
+        style={{
+          fontFamily: FONTS.semiBold,
+          fontSize: SIZES.medium,
+          colors: COLORS.primary,
+        }}
+      >
+        12h 30m
+      </Text>
     </View>
   );
 };

@@ -5,7 +5,6 @@ import { CircleButton, RectaButton } from "./Button";
 import { COLORS, SIZES, SHADOWS, ASSETS, assets } from "../constants";
 import { SubInfo, EthPrice, NFTTitle } from "./SubInfo";
 
-
 const NFTCard = ({ data }) => {
   const navigation = useNavigation();
 
@@ -31,16 +30,18 @@ const NFTCard = ({ data }) => {
           }}
         />
         <CircleButton imgUrl={assets.heart} right={10} top={10} />
-     
-     
       </View>
 
       <SubInfo />
-      
-      <View style={{ width:'100%', padding: SIZES.font }}>
-        <NFTTitle />
-      </View>
 
+      <View style={{ width: "100%", padding: SIZES.font }}>
+        <NFTTitle
+          title={data.name}
+          subTitle={data.creator}
+          titleSize={SIZES.large}
+          subTitleSize={SIZES.small}
+        />
+      </View>
     </View>
   );
 };
