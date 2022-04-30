@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import {
   View,
   SafeAreaView,
@@ -17,6 +17,16 @@ import {
   DetailsDesc,
   DetailsBid,
 } from "../components";
+
+const DetailsHeader = ({ data, navigation }) => (
+  <View style={{ width: "100%", height: 373 }}>
+    <Image
+      source={data.image}
+      resizeMode="cover"
+      style={{ width: "100%", height: "100%" }}
+    />
+  </View>
+);
 
 //navigation from app.js; route is an object who contains diff params
 const Details = ({ route, navigation }) => {
@@ -53,10 +63,10 @@ const Details = ({ route, navigation }) => {
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3 }}
-         ListHeaderComponent={() => (
-                  <React.Fragment>
-                      <DetailsHeader />
-            </React.Fragment>
+        ListHeaderComponent={() => (
+          <React.Fragment>
+            <DetailsHeader data={data} navigation={navigation} />
+          </React.Fragment>
         )}
       />
     </SafeAreaView>
